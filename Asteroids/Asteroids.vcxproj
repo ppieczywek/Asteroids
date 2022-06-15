@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C8A68BAA-8396-42F3-AA71-B11BDD0427CE}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>winAPP</RootNamespace>
+    <ProjectName>Asteroids</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v7.0A\Include;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v7.0A\Lib;$(SolutionDir)\third_party\lib;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(SolutionDir)\third_party\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Full</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <OmitFramePointers>false</OmitFramePointers>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\third_party</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <OpenMPSupport>false</OpenMPSupport>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <AdditionalIncludeDirectories>$(SolutionDir)\third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>XInput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Asteroid.h" />
+    <ClInclude Include="CameraClass.h" />
+    <ClInclude Include="cBody.h" />
+    <ClInclude Include="cConstrained.h" />
+    <ClInclude Include="cLogics.h" />
+    <ClInclude Include="CollisionManagerClass.h" />
+    <ClInclude Include="CommonGameState.h" />
+    <ClInclude Include="Constraint.h" />
+    <ClInclude Include="ConstraintManagerClass.h" />
+    <ClInclude Include="ContactEventClass.h" />
+    <ClInclude Include="cRender.h" />
+    <ClInclude Include="Debris.h" />
+    <ClInclude Include="dynamic_array.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="GameObjectManagerClass.h" />
+    <ClInclude Include="GameEngineClass.h" />
+    <ClInclude Include="GameOverState.h" />
+    <ClInclude Include="GamepadClass.h" />
+    <ClInclude Include="GameStartClass.h" />
+    <ClInclude Include="GameStateClass.h" />
+    <ClInclude Include="HingeConstraint.h" />
+    <ClInclude Include="HybridConstraint.h" />
+    <ClInclude Include="InputManagerClass.h" />
+    <ClInclude Include="LogicsManagerClass.h" />
+    <ClInclude Include="MainStateClass.h" />
+    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="Matrix22.h" />
+    <ClInclude Include="Matrix33.h" />
+    <ClInclude Include="PausedStateClass.h" />
+    <ClInclude Include="PhysicsManagerClass.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerIcon.h" />
+    <ClInclude Include="PlayerProjectile.h" />
+    <ClInclude Include="Polygon2.h" />
+    <ClInclude Include="QTree2.h" />
+    <ClInclude Include="Rectangle2D.h" />
+    <ClInclude Include="RotationMatrix.h" />
+    <ClInclude Include="Score.h" />
+    <ClInclude Include="SoftConstraint.h" />
+    <ClInclude Include="Star.h" />
+    <ClInclude Include="TCGrid.h" />
+    <ClInclude Include="CTime.h" />
+    <ClInclude Include="TransformationMatrix.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="OpenGLContext.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="BaseWindow.h" />
+    <ClInclude Include="Vector3.h" />
+    <ClInclude Include="WeldConstraint.h" />
+    <ClInclude Include="WorldPropertiesClass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Asteroid.cpp" />
+    <ClCompile Include="CameraClass.cpp" />
+    <ClCompile Include="cBody.cpp" />
+    <ClCompile Include="cConstrained.cpp" />
+    <ClCompile Include="cLogics.cpp" />
+    <ClCompile Include="CollisionManagerClass.cpp" />
+    <ClCompile Include="CommonGameState.cpp" />
+    <ClCompile Include="Constraint.cpp" />
+    <ClCompile Include="ConstraintManagerClass.cpp" />
+    <ClCompile Include="ContactEventClass.cpp" />
+    <ClCompile Include="cRedner.cpp" />
+    <ClCompile Include="CTime.cpp" />
+    <ClCompile Include="Debris.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="GameEngineClass.cpp" />
+    <ClCompile Include="GameObjectManagerClass.cpp" />
+    <ClCompile Include="GameOverState.cpp" />
+    <ClCompile Include="GamepadClass.cpp" />
+    <ClCompile Include="GameStartClass.cpp" />
+    <ClCompile Include="HingeConstraint.cpp" />
+    <ClCompile Include="HybridConstraint.cpp" />
+    <ClCompile Include="InputManagerClass.cpp" />
+    <ClCompile Include="LogicsManagerClass.cpp" />
+    <ClCompile Include="MainStateClass.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="Matrix22.cpp" />
+    <ClCompile Include="Matrix33.cpp" />
+    <ClCompile Include="OpenGLContext.cpp" />
+    <ClCompile Include="PausedStateClass.cpp" />
+    <ClCompile Include="PhysicsManagerClass.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerIcon.cpp" />
+    <ClCompile Include="PlayerProjectile.cpp" />
+    <ClCompile Include="Polygon2.cpp" />
+    <ClCompile Include="QTree2.cpp" />
+    <ClCompile Include="RotationMatrix.cpp" />
+    <ClCompile Include="Score.cpp" />
+    <ClCompile Include="SoftConstraint.cpp" />
+    <ClCompile Include="Star.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TCGrid.cpp" />
+    <ClCompile Include="TransformationMatrix.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="WeldConstraint.cpp" />
+    <ClCompile Include="winAPP.cpp" />
+    <ClCompile Include="WorldPropertiesClass.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
